@@ -1,0 +1,21 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Poc.NotifyMicro/.vs/Poc.NotifyMicro
+/Poc.NotifyMicro/Poc.NotifyMicro.Adapter/bin/Debug/net8.0
+/Poc.NotifyMicro/Poc.NotifyMicro.Adapter/obj
+/Poc.NotifyMicro/Poc.NotifyMicro.API/bin/Debug/net8.0
+/Poc.NotifyMicro/Poc.NotifyMicro.API/obj
+/Poc.NotifyMicro/Poc.NotifyMicro.EnvioEmail/bin/Debug/net8.0
+/Poc.NotifyMicro/Poc.NotifyMicro.EnvioEmail/obj
+/Poc.NotifyMicro/Poc.NotifyMicro.EnvioSms/bin/Debug/net8.0
+/Poc.NotifyMicro/Poc.NotifyMicro.EnvioSms/obj
+/Poc.NotifyMicro/Poc.NotifyMicro.RabbitMq/bin/Debug/net8.0
+/Poc.NotifyMicro/Poc.NotifyMicro.RabbitMq/obj
+/Poc.NotifyMicro/Poc.NotifyMicro.Redis/bin/Debug/net8.0
+/Poc.NotifyMicro/Poc.NotifyMicro.Redis/obj
+/Poc.NotifyMicro/Poc.NotifyMicro.Service/bin/Debug/net8.0
+/Poc.NotifyMicro/Poc.NotifyMicro.Service/obj
+/Poc.NotifyMicro/Poc.NotifyMicroDomain/bin/Debug/net8.0
+/Poc.NotifyMicro/Poc.NotifyMicroDomain/obj

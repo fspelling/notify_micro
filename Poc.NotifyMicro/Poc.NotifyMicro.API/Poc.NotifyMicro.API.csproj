@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Poc.NotifyMicro.RabbitMq\Poc.NotifyMicro.RabbitMq.csproj" />
+    <ProjectReference Include="..\Poc.NotifyMicro.Redis\Poc.NotifyMicro.Redis.csproj" />
+    <ProjectReference Include="..\Poc.NotifyMicro.Service\Poc.NotifyMicro.Service.csproj" />
+    <ProjectReference Include="..\Poc.NotifyMicroDomain\Poc.NotifyMicro.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
