@@ -1,0 +1,6 @@
+@Poc.NotifyPublish.API_HostAddress = http://localhost:5235
+
+GET {{Poc.NotifyPublish.API_HostAddress}}/notificacao/
+Accept: application/json
+
+###

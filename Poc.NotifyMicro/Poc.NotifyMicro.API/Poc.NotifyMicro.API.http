@@ -1,6 +1,0 @@
-@Poc.NotifyMicro.API_HostAddress = http://localhost:5232
-
-GET {{Poc.NotifyMicro.API_HostAddress}}/notificacao/
-Accept: application/json
-
-###

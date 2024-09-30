@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.10.0" />
+    <PackageReference Include="MassTransit" Version="8.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Poc.NotifyPublish.Domain\Poc.NotifyPublish.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Poc.NotifyMessaging.Library">
+      <HintPath>..\..\Poc.NotifyMessaging\Poc.NotifyMessaging.Library\bin\Debug\net8.0\Poc.NotifyMessaging.Library.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

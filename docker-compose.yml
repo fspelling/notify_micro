@@ -1,0 +1,30 @@
+services:
+  notifypublish.api:
+    image: ${DOCKER_REGISTRY-}notifypublishapi
+    build:
+      context: .
+      dockerfile: Poc.NotifyPublish/Poc.NotifyPublish.API/Dockerfile
+    ports:
+        - '5231:8080'
+        - '5232:5235'
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - rabbitmq
+    command: ["Poc.NotifyPublish/Poc.NotifyPublish.API/wait-for-it.sh", "rabbitmq:5672", "--", "dotnet", "run"]
+
+  rabbitmq:
+    container_name: "rabbitmqcontainer"
+    image: rabbitmq:management
+    ports:
+        - '5672:5672'
+        - '15672:15672'
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - ./config/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+      - rabbitmq_data:/var/lib/rabbitmq
+  
+volumes:
+  rabbitmq_data:
