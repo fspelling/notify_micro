@@ -3,7 +3,7 @@ services:
     image: ${DOCKER_REGISTRY-}notifypublishapi
     build:
       context: .
-      dockerfile: Poc.NotifyPublish/Poc.NotifyPublish.API/Dockerfile
+      dockerfile: projects/Poc.NotifyPublish/Poc.NotifyPublish.API/Dockerfile
     ports:
         - '5231:8080'
         - '5232:5235'
@@ -23,7 +23,7 @@ services:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
     volumes:
-      - ./config/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+      - ./configDocker/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
       - rabbitmq_data:/var/lib/rabbitmq
 
   redis:

@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<PackageId>Poc.NotifyMessaging.Library</PackageId>
+	<Version>1.0.0</Version>
+	<Authors>Fernando Spelling</Authors>
+	<Company>Pocs Spelling</Company>
+	<Description>Library que representa os contratos de mensageria de notificacao.</Description>
+  </PropertyGroup>
+
+</Project>
