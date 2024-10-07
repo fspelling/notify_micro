@@ -30,12 +30,9 @@ namespace Poc.NotifyPublish.API
                         hostConfigurator.Password("guest");
                     });
 
-                    cfg.Message<INotificacaoCreated>(e => e.SetEntityName("notify-event-exchange"));
-                    cfg.Publish<INotificacaoCreated>(e => e.ExchangeType = ExchangeType.Direct);
-                    cfg.Send<INotificacaoCreated>(e =>
-                    {
-                        e.UseRoutingKeyFormatter(context => "notify-event");
-                    });
+                    cfg.Message<IPagamentoCreatedEvent>(e => e.SetEntityName("pagamento-created-event-exchange"));
+                    cfg.Publish<IPagamentoCreatedEvent>(e => e.ExchangeType = ExchangeType.Direct);
+                    cfg.Send<IPagamentoCreatedEvent>(e => e.UseRoutingKeyFormatter(context => "pagamento-created"));
                 });
             });
         }

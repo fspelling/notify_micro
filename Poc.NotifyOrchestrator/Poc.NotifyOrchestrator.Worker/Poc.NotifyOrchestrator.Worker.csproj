@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-Poc.NotifyOrchestrator.Worker-976a1e6b-9b42-454a-af9d-55a5b0736a48</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.2.5" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Poc.NotifyOrchestrator.Domain\Poc.NotifyOrchestrator.Domain.csproj" />
+    <ProjectReference Include="..\Poc.NotifyOrchestrator.EntityFramework\Poc.NotifyOrchestrator.EntityFramework.csproj" />
+    <ProjectReference Include="..\Poc.NotifyOrchestrator.Redis\Poc.NotifyOrchestrator.Cache.csproj" />
+    <ProjectReference Include="..\Poc.NotifyOrchestrator.Service\Poc.NotifyOrchestrator.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Poc.NotifyMessaging.Library">
+      <HintPath>Libs\Poc.NotifyMessaging.Library.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

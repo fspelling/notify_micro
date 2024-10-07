@@ -11,7 +11,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
     depends_on:
       - rabbitmq
-    command: ["Poc.NotifyPublish/Poc.NotifyPublish.API/wait-for-it.sh", "rabbitmq:5672", "--", "dotnet", "run"]
+      - redis
 
   rabbitmq:
     container_name: "rabbitmqcontainer"
@@ -25,6 +25,12 @@ services:
     volumes:
       - ./config/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
       - rabbitmq_data:/var/lib/rabbitmq
+
+  redis:
+    container_name: "rediscontainer"
+    image: redis
+    ports:
+      - '6379:6379'
   
 volumes:
   rabbitmq_data:

@@ -6,4 +6,21 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.10.0" />
+    <PackageReference Include="MassTransit" Version="8.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Poc.NotifyOrchestrator.Domain\Poc.NotifyOrchestrator.Domain.csproj" />
+    <ProjectReference Include="..\Poc.NotifyOrchestrator.EntityFramework\Poc.NotifyOrchestrator.EntityFramework.csproj" />
+    <ProjectReference Include="..\Poc.NotifyOrchestrator.Redis\Poc.NotifyOrchestrator.Cache.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Poc.NotifyMessaging.Library">
+      <HintPath>Libs\Poc.NotifyMessaging.Library.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

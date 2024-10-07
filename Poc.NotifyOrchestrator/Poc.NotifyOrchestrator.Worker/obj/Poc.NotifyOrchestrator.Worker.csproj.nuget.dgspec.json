@@ -1,0 +1,418 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Worker\\Poc.NotifyOrchestrator.Worker.csproj": {}
+  },
+  "projects": {
+    "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Domain\\Poc.NotifyOrchestrator.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Domain\\Poc.NotifyOrchestrator.Domain.csproj",
+        "projectName": "Poc.NotifyOrchestrator.Domain",
+        "projectPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Domain\\Poc.NotifyOrchestrator.Domain.csproj",
+        "packagesPath": "C:\\Users\\fernando.spelling\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\fernando.spelling\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.10.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.EntityFramework\\Poc.NotifyOrchestrator.EntityFramework.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.EntityFramework\\Poc.NotifyOrchestrator.EntityFramework.csproj",
+        "projectName": "Poc.NotifyOrchestrator.EntityFramework",
+        "projectPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.EntityFramework\\Poc.NotifyOrchestrator.EntityFramework.csproj",
+        "packagesPath": "C:\\Users\\fernando.spelling\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.EntityFramework\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\fernando.spelling\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Domain\\Poc.NotifyOrchestrator.Domain.csproj": {
+                "projectPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Domain\\Poc.NotifyOrchestrator.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Redis\\Poc.NotifyOrchestrator.Cache.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Redis\\Poc.NotifyOrchestrator.Cache.csproj",
+        "projectName": "Poc.NotifyOrchestrator.Cache",
+        "projectPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Redis\\Poc.NotifyOrchestrator.Cache.csproj",
+        "packagesPath": "C:\\Users\\fernando.spelling\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Redis\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\fernando.spelling\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Domain\\Poc.NotifyOrchestrator.Domain.csproj": {
+                "projectPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Domain\\Poc.NotifyOrchestrator.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Service\\Poc.NotifyOrchestrator.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Service\\Poc.NotifyOrchestrator.Service.csproj",
+        "projectName": "Poc.NotifyOrchestrator.Service",
+        "projectPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Service\\Poc.NotifyOrchestrator.Service.csproj",
+        "packagesPath": "C:\\Users\\fernando.spelling\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\fernando.spelling\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Domain\\Poc.NotifyOrchestrator.Domain.csproj": {
+                "projectPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Domain\\Poc.NotifyOrchestrator.Domain.csproj"
+              },
+              "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.EntityFramework\\Poc.NotifyOrchestrator.EntityFramework.csproj": {
+                "projectPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.EntityFramework\\Poc.NotifyOrchestrator.EntityFramework.csproj"
+              },
+              "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Redis\\Poc.NotifyOrchestrator.Cache.csproj": {
+                "projectPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Redis\\Poc.NotifyOrchestrator.Cache.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.10.0, )"
+            },
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.2.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Worker\\Poc.NotifyOrchestrator.Worker.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Worker\\Poc.NotifyOrchestrator.Worker.csproj",
+        "projectName": "Poc.NotifyOrchestrator.Worker",
+        "projectPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Worker\\Poc.NotifyOrchestrator.Worker.csproj",
+        "packagesPath": "C:\\Users\\fernando.spelling\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Worker\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\fernando.spelling\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Domain\\Poc.NotifyOrchestrator.Domain.csproj": {
+                "projectPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Domain\\Poc.NotifyOrchestrator.Domain.csproj"
+              },
+              "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.EntityFramework\\Poc.NotifyOrchestrator.EntityFramework.csproj": {
+                "projectPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.EntityFramework\\Poc.NotifyOrchestrator.EntityFramework.csproj"
+              },
+              "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Redis\\Poc.NotifyOrchestrator.Cache.csproj": {
+                "projectPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Redis\\Poc.NotifyOrchestrator.Cache.csproj"
+              },
+              "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Service\\Poc.NotifyOrchestrator.Service.csproj": {
+                "projectPath": "C:\\Projetos\\pocs\\notify_micro\\Poc.NotifyOrchestrator\\Poc.NotifyOrchestrator.Service\\Poc.NotifyOrchestrator.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MassTransit.RabbitMQ": {
+              "target": "Package",
+              "version": "[8.2.5, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

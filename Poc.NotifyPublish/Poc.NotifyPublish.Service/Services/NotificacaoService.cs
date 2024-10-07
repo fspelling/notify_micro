@@ -17,7 +17,7 @@ namespace Poc.NotifyPublish.Service.Services
         {
             await _validatorNotificarRequest.ValidarRequestException<NotificarRequest, NotificacaoException>(request);
 
-            await _publishEndpoint.Publish<INotificacaoCreated>(new
+            await _publishEndpoint.Publish<IPagamentoCreatedEvent>(new
             {
                 UsuarioId = request.UsuarioID,
                 DataCriacao = DateTime.Now
