@@ -83,3 +83,5 @@
 /projects/Poc.NotifySend/Poc.NotifySendEmail.Worker/obj
 /projects/Poc.NotifySend/Poc.NotifySendSms.Worker/bin/Debug/net8.0
 /projects/Poc.NotifySend/Poc.NotifySendSms.Worker/obj
+/projects/Poc.NotifyOrchestrator/Poc.NotifyOrchestrator.Cache/bin/Debug/net8.0
+/projects/Poc.NotifyOrchestrator/Poc.NotifyOrchestrator.Cache/obj

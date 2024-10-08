@@ -4,11 +4,14 @@ using Poc.NotifyOrchestrator.EntityFramework.EntityConfiguration;
 
 namespace Poc.NotifyOrchestrator.EntityFramework
 {
-    public class NotificacaoDbContext(DbContextOptions<NotificacaoDbContext> options) : DbContext(options)
+    public class NotificacaoDbContext : DbContext
     {
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<UsuarioEmail> UsuarioEmail { get; set; }
         public DbSet<UsuarioSms> UsuarioSms { get; set; }
+
+        public NotificacaoDbContext(DbContextOptions<NotificacaoDbContext> options) : base(options)
+            => Database.EnsureCreated();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

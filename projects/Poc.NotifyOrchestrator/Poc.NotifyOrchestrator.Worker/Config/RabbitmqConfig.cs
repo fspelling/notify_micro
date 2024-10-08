@@ -2,6 +2,7 @@
 using Poc.NotifyMessaging.Library.Command;
 using Poc.NotifyOrchestrator.Worker.Consumers;
 using RabbitMQ.Client;
+using System.Net;
 
 namespace Poc.NotifyOrchestrator.Worker.Config
 {
@@ -9,15 +10,13 @@ namespace Poc.NotifyOrchestrator.Worker.Config
     {
         public static void Configure(this IServiceCollection services)
         {
-            services.AddTransient<NotificacaoCreatedEventConsumer>();
-
             services.AddMassTransit(mt =>
             {
                 mt.AddConsumer<NotificacaoCreatedEventConsumer>();
 
                 mt.UsingRabbitMq((context, cfg) =>
                 {
-                    cfg.Host("localhost", "/", h =>
+                    cfg.Host("rabbitmq", "/", h =>
                     {
                         h.Username("guest");
                         h.Password("guest");
@@ -27,6 +26,8 @@ namespace Poc.NotifyOrchestrator.Worker.Config
                     ConfigureConsumers(context, cfg);
                 });
             });
+
+            services.AddTransient<NotificacaoCreatedEventConsumer>();
         }
 
         private static void ConfigurePublishers(IRabbitMqBusFactoryConfigurator config)

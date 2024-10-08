@@ -13,9 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Poc.NotifyOrchestrator.Cache\Poc.NotifyOrchestrator.Cache.csproj" />
     <ProjectReference Include="..\Poc.NotifyOrchestrator.Domain\Poc.NotifyOrchestrator.Domain.csproj" />
     <ProjectReference Include="..\Poc.NotifyOrchestrator.EntityFramework\Poc.NotifyOrchestrator.EntityFramework.csproj" />
-    <ProjectReference Include="..\Poc.NotifyOrchestrator.Redis\Poc.NotifyOrchestrator.Cache.csproj" />
   </ItemGroup>
 
 </Project>

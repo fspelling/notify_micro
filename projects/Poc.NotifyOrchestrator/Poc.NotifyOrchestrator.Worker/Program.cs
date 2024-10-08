@@ -2,6 +2,7 @@ using Poc.NotifyOrchestrator.Worker;
 
 var builder = Host.CreateDefaultBuilder(args).ConfigureServices((hostContext, services) =>
 {
+
     services.ConfigureInjectDependency();
     services.ConfigureValidators();
     services.ConfigureRabbitmq();

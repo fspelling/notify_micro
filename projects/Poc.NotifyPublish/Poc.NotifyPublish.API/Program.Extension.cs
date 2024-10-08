@@ -12,9 +12,7 @@ namespace Poc.NotifyPublish.API
     public static class ProgramExtension
     {
         public static void ConfigureInjectDependency(this WebApplicationBuilder builder)
-        {
-            builder.Services.AddScoped<INotificacaoService, NotificacaoService>();
-        }
+            => builder.Services.AddScoped<INotificacaoService, NotificacaoService>();
 
         public static void ConfigureRabbitmq(this WebApplicationBuilder builder)
         {
@@ -24,7 +22,7 @@ namespace Poc.NotifyPublish.API
 
                 busConfiguration.UsingRabbitMq((context, cfg) =>
                 {
-                    cfg.Host("localhost", "/", hostConfigurator =>
+                    cfg.Host("rabbitmq", "/", hostConfigurator =>
                     {
                         hostConfigurator.Username("guest");
                         hostConfigurator.Password("guest");
@@ -38,8 +36,6 @@ namespace Poc.NotifyPublish.API
         }
 
         public static void ConfigureValidators(this WebApplicationBuilder builder)
-        {
-            builder.Services.AddScoped<IValidator<NotificarRequest>, NotificarRequestValidator>();
-        }
+            => builder.Services.AddScoped<IValidator<NotificarRequest>, NotificarRequestValidator>();
     }
 }

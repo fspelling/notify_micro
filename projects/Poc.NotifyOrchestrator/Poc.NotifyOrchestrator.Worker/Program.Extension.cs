@@ -41,6 +41,6 @@ namespace Poc.NotifyOrchestrator.Worker
         }
 
         public static void ConfigureRedis(this IServiceCollection services)
-            => services.AddStackExchangeRedisCache(opt => opt.Configuration = "localhost:6379");
+            => services.AddStackExchangeRedisCache(opt => opt.Configuration = "redis:6379");
     }
 }
