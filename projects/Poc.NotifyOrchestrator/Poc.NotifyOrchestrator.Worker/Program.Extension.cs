@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Poc.NotifyOrchestrator.Cache.Caches;
 using Poc.NotifyOrchestrator.Cache.Interfaces;
-using Poc.NotifyOrchestrator.Domain.ViewModel.Notificacao.Request;
+using Poc.NotifyOrchestrator.Domain.ViewModel.Pagamento.Request;
 using Poc.NotifyOrchestrator.EntityFramework;
 using Poc.NotifyOrchestrator.EntityFramework.Interfaces;
 using Poc.NotifyOrchestrator.EntityFramework.Repositories;
@@ -17,7 +17,7 @@ namespace Poc.NotifyOrchestrator.Worker
     {
         public static void ConfigureInjectDependency(this IServiceCollection services)
         {
-            services.AddScoped<INotificacaoService, NotificacaoService>();
+            services.AddScoped<IPagamentoService, PagamentoService>();
 
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IUsuarioEmailRepository, UsuarioEmailRepository>();
@@ -28,7 +28,7 @@ namespace Poc.NotifyOrchestrator.Worker
 
         public static void ConfigureValidators(this IServiceCollection services)
         {
-            services.AddScoped<IValidator<NotificarRequest>, NotificarRequestValidator>();
+            services.AddScoped<IValidator<RealizarPagamentoRequest>, NotificarRequestValidator>();
         }
 
         public static void ConfigureRabbitmq(this IServiceCollection services)

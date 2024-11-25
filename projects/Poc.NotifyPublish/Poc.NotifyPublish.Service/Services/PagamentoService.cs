@@ -8,18 +8,19 @@ using Poc.NotifyPublish.Domain.ViewModel.Notificacao.Request;
 
 namespace Poc.NotifyPublish.Service.Services
 {
-    public class NotificacaoService(IValidator<NotificarRequest> validatorNotificarRequest, IPublishEndpoint publishEndpoint) : INotificacaoService
+    public class PagamentoService(IValidator<RealizarPagamentoRequest> validatorNotificarRequest, IPublishEndpoint publishEndpoint) : IPagamentoService
     {
-        private readonly IValidator<NotificarRequest> _validatorNotificarRequest = validatorNotificarRequest;
+        private readonly IValidator<RealizarPagamentoRequest> _validatorNotificarRequest = validatorNotificarRequest;
         private readonly IPublishEndpoint _publishEndpoint = publishEndpoint;
 
-        public async Task Notificar(NotificarRequest request)
+        public async Task RealizarPagamento(RealizarPagamentoRequest request)
         {
-            await _validatorNotificarRequest.ValidarRequestException<NotificarRequest, NotificacaoException>(request);
+            await _validatorNotificarRequest.ValidarRequestException<RealizarPagamentoRequest, PagamentoException>(request);
 
             await _publishEndpoint.Publish<IPagamentoCreatedEvent>(new
             {
                 UsuarioId = request.UsuarioID,
+                FormaPagamento = request.FormaPagamento.ToString(),
                 DataCriacao = DateTime.Now
             });
         }

@@ -9,19 +9,19 @@ namespace Poc.NotifyPublish.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class NotificacaoController(INotificacaoService notificacaoService) : BaseController
+    public class PagamentoController(IPagamentoService pagamentoService) : BaseController
     {
-        private readonly INotificacaoService _notificacaoService = notificacaoService;
+        private readonly IPagamentoService _pagamentoService = pagamentoService;
 
         [HttpPost]
-        public async Task<ActionResult<CustomResponseViewModel<object>>> Notificar([FromBody]NotificarRequest request)
+        public async Task<ActionResult<CustomResponseViewModel>> RealizarPagamento([FromBody] RealizarPagamentoRequest request)
         {
             try
             {
-                await _notificacaoService.Notificar(request);
-                return CustomResponse<object>(null!);
+                await _pagamentoService.RealizarPagamento(request);
+                return CustomResponse();
             }
-            catch (NotificacaoException e)
+            catch (PagamentoException e)
             {
                 return CustomResponseError(System.Net.HttpStatusCode.BadRequest, e);
             }

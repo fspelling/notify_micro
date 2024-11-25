@@ -1,7 +1,8 @@
-﻿namespace Poc.NotifyOrchestrator.Domain.ViewModel.Notificacao.Request
+﻿namespace Poc.NotifyOrchestrator.Domain.ViewModel.Pagamento.Request
 {
-    public class NotificarRequest
+    public class RealizarPagamentoRequest
     {
         public required string UsuarioId { get; set; }
+        public required string FormaPagamento { get; set; }
     }
 }

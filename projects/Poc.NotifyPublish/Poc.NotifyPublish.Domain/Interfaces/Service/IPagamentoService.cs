@@ -2,8 +2,8 @@
 
 namespace Poc.NotifyPublish.Domain.Interfaces.Service
 {
-    public interface INotificacaoService
+    public interface IPagamentoService
     {
-        Task Notificar(NotificarRequest request);
+        Task RealizarPagamento(RealizarPagamentoRequest request);
     }
 }

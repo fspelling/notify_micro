@@ -12,7 +12,7 @@ namespace Poc.NotifyPublish.API
     public static class ProgramExtension
     {
         public static void ConfigureInjectDependency(this WebApplicationBuilder builder)
-            => builder.Services.AddScoped<INotificacaoService, NotificacaoService>();
+            => builder.Services.AddScoped<IPagamentoService, PagamentoService>();
 
         public static void ConfigureRabbitmq(this WebApplicationBuilder builder)
         {
@@ -36,6 +36,6 @@ namespace Poc.NotifyPublish.API
         }
 
         public static void ConfigureValidators(this WebApplicationBuilder builder)
-            => builder.Services.AddScoped<IValidator<NotificarRequest>, NotificarRequestValidator>();
+            => builder.Services.AddScoped<IValidator<RealizarPagamentoRequest>, RealizarPagamentoRequestValidator>();
     }
 }

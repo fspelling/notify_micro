@@ -5,22 +5,22 @@ using Poc.NotifyOrchestrator.Cache.Interfaces;
 using Poc.NotifyOrchestrator.Cache.ModelCache;
 using Poc.NotifyOrchestrator.Domain.Exceptions;
 using Poc.NotifyOrchestrator.Domain.Extensions;
-using Poc.NotifyOrchestrator.Domain.ViewModel.Notificacao.Request;
+using Poc.NotifyOrchestrator.Domain.ViewModel.Pagamento.Request;
 using Poc.NotifyOrchestrator.EntityFramework.Interfaces;
 using Poc.NotifyOrchestrator.Service.Interfaces;
 
 namespace Poc.NotifyOrchestrator.Service.Services
 {
-    public class NotificacaoService(
-        IValidator<NotificarRequest> notificarRequestValidator,
+    public class PagamentoService(
+        IValidator<RealizarPagamentoRequest> notificarRequestValidator,
         IUsuarioNotificacaoCache usuarioNotificacaoCache,
         IUsuarioRepository usuarioRepository,
         IUsuarioEmailRepository usuarioEmailRepository,
         IUsuarioSmsRepository usuarioSmsRepository,
         IPublishEndpoint publishEndpoint
-    ) : INotificacaoService
+    ) : IPagamentoService
     {
-        private readonly IValidator<NotificarRequest> _notificarRequestValidator = notificarRequestValidator;
+        private readonly IValidator<RealizarPagamentoRequest> _notificarRequestValidator = notificarRequestValidator;
 
         private readonly IUsuarioNotificacaoCache _usuarioNotificacaoCache = usuarioNotificacaoCache;
 
@@ -30,16 +30,20 @@ namespace Poc.NotifyOrchestrator.Service.Services
 
         private readonly IPublishEndpoint _publishEndpoint = publishEndpoint;
 
-        public async Task Notificar(NotificarRequest request)
+        public async Task RealizarPagamento(RealizarPagamentoRequest request)
         {
-            await _notificarRequestValidator.ValidarRequestException<NotificarRequest, NotificacaoException>(request);
+            await _notificarRequestValidator.ValidarRequestException<RealizarPagamentoRequest, NotificacaoException>(request);
 
-            var usuarioNotificacao = await CarregarUsuarioNotificacao(request.UsuarioId);
+            Console.Write($"Simulando pagamento do usuario: {request.UsuarioId}, pela forma de pagamento: {request.FormaPagamento}");
 
-            if (usuarioNotificacao is null)
-                throw new NotificacaoException("Usuario nao econtrado na base");
+            await NotificarPagamento(request.UsuarioId);
+        }
 
-            await NotificarEmailCommand(usuarioNotificacao.UsuarioNome, usuarioNotificacao.UsuarioEmail, usuarioNotificacao.TemplateEmail);
+        private async Task NotificarPagamento(string usuarioId)
+        {
+            var usuarioNotificacao = await CarregarUsuarioNotificacao(usuarioId);
+
+            await NotificarEmailCommand(usuarioNotificacao!.UsuarioNome, usuarioNotificacao.UsuarioEmail, usuarioNotificacao.TemplateEmail);
 
             if (usuarioNotificacao.UsuarioSms is not null)
                 await NotificarSmsCommand(usuarioNotificacao.UsuarioNome, usuarioNotificacao.UsuarioSms, usuarioNotificacao.TemplateSms);

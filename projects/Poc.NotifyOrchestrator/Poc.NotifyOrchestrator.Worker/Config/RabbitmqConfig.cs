@@ -2,7 +2,6 @@
 using Poc.NotifyMessaging.Library.Command;
 using Poc.NotifyOrchestrator.Worker.Consumers;
 using RabbitMQ.Client;
-using System.Net;
 
 namespace Poc.NotifyOrchestrator.Worker.Config
 {
@@ -12,7 +11,7 @@ namespace Poc.NotifyOrchestrator.Worker.Config
         {
             services.AddMassTransit(mt =>
             {
-                mt.AddConsumer<NotificacaoCreatedEventConsumer>();
+                mt.AddConsumer<PagamentoCreatedEventConsumer>();
 
                 mt.UsingRabbitMq((context, cfg) =>
                 {
@@ -27,7 +26,7 @@ namespace Poc.NotifyOrchestrator.Worker.Config
                 });
             });
 
-            services.AddTransient<NotificacaoCreatedEventConsumer>();
+            services.AddTransient<PagamentoCreatedEventConsumer>();
         }
 
         private static void ConfigurePublishers(IRabbitMqBusFactoryConfigurator config)
@@ -50,7 +49,7 @@ namespace Poc.NotifyOrchestrator.Worker.Config
                 re.SetQuorumQueue();
                 re.SetQueueArgument("declare", "lazy");
 
-                re.ConfigureConsumer<NotificacaoCreatedEventConsumer>(context);
+                re.ConfigureConsumer<PagamentoCreatedEventConsumer>(context);
 
                 re.Bind("pagamento-created-event-exchange", e =>
                 {
