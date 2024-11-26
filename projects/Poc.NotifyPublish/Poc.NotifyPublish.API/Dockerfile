@@ -7,6 +7,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY ["projects/Poc.NotifyPublish/Poc.NotifyPublish.API/Poc.NotifyPublish.API.csproj", "Poc.NotifyPublish/Poc.NotifyPublish.API/"]
 COPY ["projects/Poc.NotifyPublish/Poc.NotifyPublish.Service/Poc.NotifyPublish.Service.csproj", "Poc.NotifyPublish/Poc.NotifyPublish.Service/"]
+COPY ["projects/Poc.NotifyPublish/Poc.NotifyPublish.Bus/Poc.NotifyPublish.Bus.csproj", "Poc.NotifyPublish/Poc.NotifyPublish.Bus/"]
 COPY ["projects/Poc.NotifyPublish/Poc.NotifyPublish.Domain/Poc.NotifyPublish.Domain.csproj", "Poc.NotifyPublish/Poc.NotifyPublish.Domain/"]
 RUN dotnet restore "Poc.NotifyPublish/Poc.NotifyPublish.API/Poc.NotifyPublish.API.csproj"
 COPY . .
