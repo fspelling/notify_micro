@@ -8,7 +8,7 @@ namespace Poc.NotifyPublish.Service.Validators.Notificacao
         public RealizarPagamentoRequestValidator()
         {
             RuleFor(request => request.UsuarioID).NotNull().NotEmpty().WithMessage("Usuario id deve ser informado");
-            RuleFor(request => request.FormaPagamento).NotNull().NotEmpty().WithMessage("Usuario id deve ser informado");
+            RuleFor(request => request.FormaPagamento).IsInEnum().WithMessage("Forma de pagamento deve ser informado");
         }
     }
 }
