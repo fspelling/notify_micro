@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
-using MassTransit;
 using Poc.NotifyMessaging.Library.Command;
 using Poc.NotifyOrchestrator.Cache.Interfaces;
 using Poc.NotifyOrchestrator.Cache.ModelCache;
 using Poc.NotifyOrchestrator.Domain.Exceptions;
 using Poc.NotifyOrchestrator.Domain.Extensions;
+using Poc.NotifyOrchestrator.Domain.Interfaces.EventBus;
 using Poc.NotifyOrchestrator.Domain.ViewModel.Pagamento.Request;
 using Poc.NotifyOrchestrator.EntityFramework.Interfaces;
 using Poc.NotifyOrchestrator.Service.Interfaces;
@@ -17,7 +17,7 @@ namespace Poc.NotifyOrchestrator.Service.Services
         IUsuarioRepository usuarioRepository,
         IUsuarioEmailRepository usuarioEmailRepository,
         IUsuarioSmsRepository usuarioSmsRepository,
-        IPublishEndpoint publishEndpoint
+        IEventBus eventBus
     ) : IPagamentoService
     {
         private readonly IValidator<RealizarPagamentoRequest> _notificarRequestValidator = notificarRequestValidator;
@@ -28,7 +28,7 @@ namespace Poc.NotifyOrchestrator.Service.Services
         private readonly IUsuarioEmailRepository _usuarioEmailRepository = usuarioEmailRepository;
         private readonly IUsuarioSmsRepository _usuarioSmsRepository = usuarioSmsRepository;
 
-        private readonly IPublishEndpoint _publishEndpoint = publishEndpoint;
+        private readonly IEventBus _eventBus = eventBus;
 
         public async Task RealizarPagamento(RealizarPagamentoRequest request)
         {
@@ -80,17 +80,17 @@ namespace Poc.NotifyOrchestrator.Service.Services
 
         private async Task NotificarEmailCommand(string nomeUsuario, string email, string template)
         {
-            await _publishEndpoint.Publish<INotificarEmailCommand>(new
-            {
-                NomeUsuario = nomeUsuario,
-                EmailUsuario = email,
-                Template = template
+            await _eventBus.Publish(new NotificarEmailCommand 
+            { 
+                NomeUsuario = nomeUsuario, 
+                EmailUsuario = email, 
+                Template = template 
             });
         }
 
         private async Task NotificarSmsCommand(string nomeUsuario, string sms, string template)
         {
-            await _publishEndpoint.Publish<INotificarSmsCommand>(new
+            await _eventBus.Publish(new NotificarSmsCommand
             {
                 NomeUsuario = nomeUsuario,
                 SmsUsuario = sms,

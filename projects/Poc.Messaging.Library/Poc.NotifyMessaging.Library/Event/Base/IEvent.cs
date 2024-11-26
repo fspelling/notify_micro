@@ -1,6 +1,6 @@
 ﻿namespace Poc.NotifyMessaging.Library.Event.Base
 {
-    public interface IEvent
+    public interface IEvent : IMessage
     {
     }
 }

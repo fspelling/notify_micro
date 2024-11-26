@@ -5,14 +5,14 @@ using Poc.NotifyOrchestrator.Service.Interfaces;
 
 namespace Poc.NotifyOrchestrator.Worker.Consumers
 {
-    public class PagamentoCreatedEventConsumer(IPagamentoService pagamentoService) : IConsumer<IPagamentoCreatedEvent>
+    public class PagamentoCreatedEventConsumer(IPagamentoService pagamentoService) : IConsumer<PagamentoCreatedEvent>
     {
         private readonly IPagamentoService _pagamentoService = pagamentoService;
 
-        public async Task Consume(ConsumeContext<IPagamentoCreatedEvent> context)
+        public async Task Consume(ConsumeContext<PagamentoCreatedEvent> context)
         {
             var message = context.Message;
-            await _pagamentoService.RealizarPagamento(new RealizarPagamentoRequest { UsuarioId = message.UsuarioId, FormaPagamento = message.FormaPagamento });
+            await _pagamentoService.RealizarPagamento(new RealizarPagamentoRequest { UsuarioId = message.UsuarioId!, FormaPagamento = message.FormaPagamento! });
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Poc.NotifyMessaging.Library.Command.Base
 {
-    public interface ICommand
+    public interface ICommand : IMessage
     {
     }
 }

@@ -31,13 +31,13 @@ namespace Poc.NotifyOrchestrator.Worker.Config
 
         private static void ConfigurePublishers(IRabbitMqBusFactoryConfigurator config)
         {
-            config.Message<INotificarEmailCommand>(e => e.SetEntityName("notificacao-command-exchange"));
-            config.Publish<INotificarEmailCommand>(e => e.ExchangeType = ExchangeType.Direct);
-            config.Send<INotificarEmailCommand>(e => e.UseRoutingKeyFormatter(context => "notificacao-email"));
+            config.Message<NotificarEmailCommand>(e => e.SetEntityName("notificacao-command-exchange"));
+            config.Publish<NotificarEmailCommand>(e => e.ExchangeType = ExchangeType.Direct);
+            config.Send<NotificarEmailCommand>(e => e.UseRoutingKeyFormatter(context => "notificacao-email"));
 
-            config.Message<INotificarSmsCommand>(e => e.SetEntityName("notificacao-command-exchange"));
-            config.Publish<INotificarSmsCommand>(e => e.ExchangeType = ExchangeType.Direct);
-            config.Send<INotificarSmsCommand>(e => e.UseRoutingKeyFormatter(context => "notificacao-sms"));
+            config.Message<NotificarSmsCommand>(e => e.SetEntityName("notificacao-command-exchange"));
+            config.Publish<NotificarSmsCommand>(e => e.ExchangeType = ExchangeType.Direct);
+            config.Send<NotificarSmsCommand>(e => e.UseRoutingKeyFormatter(context => "notificacao-sms"));
         }
 
         private static void ConfigureConsumers(IBusRegistrationContext context, IRabbitMqBusFactoryConfigurator config)

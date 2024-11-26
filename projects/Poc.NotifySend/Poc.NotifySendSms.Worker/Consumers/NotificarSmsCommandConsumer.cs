@@ -5,17 +5,17 @@ using Poc.NotifySend.Service.Interfaces;
 
 namespace Poc.NotifySendSms.Worker.Consumers
 {
-    public class NotificarSmsCommandConsumer(INotificacaoService<NotificarSmsRequest> notificacaoService) : IConsumer<INotificarSmsCommand>
+    public class NotificarSmsCommandConsumer(INotificacaoService<NotificarSmsRequest> notificacaoService) : IConsumer<NotificarSmsCommand>
     {
         private readonly INotificacaoService<NotificarSmsRequest> _notificacaoService = notificacaoService;
 
-        public async Task Consume(ConsumeContext<INotificarSmsCommand> context)
+        public async Task Consume(ConsumeContext<NotificarSmsCommand> context)
         {
             var request = new NotificarSmsRequest
             {
-                NomeUsuario = context.Message.NomeUsuario,
-                Telefone = context.Message.SmsUsuario,
-                Template = context.Message.Template,
+                NomeUsuario = context.Message.NomeUsuario!,
+                Telefone = context.Message.SmsUsuario!,
+                Template = context.Message.Template!,
             };
 
             await _notificacaoService.Notificar(request);

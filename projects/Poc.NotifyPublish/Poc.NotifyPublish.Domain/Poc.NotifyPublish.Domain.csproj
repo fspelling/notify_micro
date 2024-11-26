@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.10.0" />
+    <PackageReference Include="Poc.NotifyMessaging.Library" Version="1.0.5" />
   </ItemGroup>
 
 </Project>
