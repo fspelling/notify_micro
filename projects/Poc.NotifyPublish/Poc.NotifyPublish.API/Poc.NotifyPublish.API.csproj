@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Poc.NotifyPublish.Bus\Poc.NotifyPublish.Bus.csproj" />
     <ProjectReference Include="..\Poc.NotifyPublish.Domain\Poc.NotifyPublish.Domain.csproj" />
     <ProjectReference Include="..\Poc.NotifyPublish.Service\Poc.NotifyPublish.Service.csproj" />
   </ItemGroup>

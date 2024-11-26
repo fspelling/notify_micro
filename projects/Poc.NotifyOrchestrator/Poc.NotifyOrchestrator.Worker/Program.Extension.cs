@@ -1,7 +1,9 @@
 ﻿using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Poc.NotifyOrchestrator.Bus;
 using Poc.NotifyOrchestrator.Cache.Caches;
 using Poc.NotifyOrchestrator.Cache.Interfaces;
+using Poc.NotifyOrchestrator.Domain.Interfaces.EventBus;
 using Poc.NotifyOrchestrator.Domain.ViewModel.Pagamento.Request;
 using Poc.NotifyOrchestrator.EntityFramework;
 using Poc.NotifyOrchestrator.EntityFramework.Interfaces;
@@ -24,6 +26,7 @@ namespace Poc.NotifyOrchestrator.Worker
             services.AddScoped<IUsuarioSmsRepository, UsuarioSmsRepository>();
 
             services.AddScoped<IUsuarioNotificacaoCache, UsuarioNotificacaoCache>();
+            services.AddScoped<IEventBus, EventBus>();
         }
 
         public static void ConfigureValidators(this IServiceCollection services)

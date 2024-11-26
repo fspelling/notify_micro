@@ -1,6 +1,8 @@
 ﻿using FluentValidation;
 using MassTransit;
 using Poc.NotifyMessaging.Library.Event;
+using Poc.NotifyPublish.Bus;
+using Poc.NotifyPublish.Domain.Interfaces.EventBus;
 using Poc.NotifyPublish.Domain.Interfaces.Service;
 using Poc.NotifyPublish.Domain.ViewModel.Notificacao.Request;
 using Poc.NotifyPublish.Service.Services;
@@ -12,7 +14,10 @@ namespace Poc.NotifyPublish.API
     public static class ProgramExtension
     {
         public static void ConfigureInjectDependency(this WebApplicationBuilder builder)
-            => builder.Services.AddScoped<IPagamentoService, PagamentoService>();
+        {
+            builder.Services.AddScoped<IPagamentoService, PagamentoService>();
+            builder.Services.AddScoped<IEventBus, EventBus>();
+        }
 
         public static void ConfigureRabbitmq(this WebApplicationBuilder builder)
         {
