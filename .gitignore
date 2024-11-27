@@ -89,3 +89,5 @@
 /projects/Poc.NotifyOrchestrator/Poc.NotifyOrchestrator.Bus/obj
 /projects/Poc.NotifyPublish/Poc.NotifyPublish.Bus/bin/Debug/net8.0
 /projects/Poc.NotifyPublish/Poc.NotifyPublish.Bus/obj
+/projects/Poc.NotifyPublish/Poc.NotifyPublish.Data/bin/Debug/net8.0
+/projects/Poc.NotifyPublish/Poc.NotifyPublish.Data/obj

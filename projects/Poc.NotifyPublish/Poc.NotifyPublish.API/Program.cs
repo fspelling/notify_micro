@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.ConfigureInjectDependency();
 builder.ConfigureRabbitmq();
 builder.ConfigureValidators();
+builder.ConfigureDbContextSql(builder.Configuration);
 
 builder.Services.AddCors(options =>
 {
