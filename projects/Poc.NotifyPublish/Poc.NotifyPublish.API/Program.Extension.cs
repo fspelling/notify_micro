@@ -42,8 +42,7 @@ namespace Poc.NotifyPublish.API
                     });
 
                     cfg.Message<PagamentoCreatedEvent>(e => e.SetEntityName("pagamento-created-event-exchange"));
-                    cfg.Publish<PagamentoCreatedEvent>(e => e.ExchangeType = ExchangeType.Direct);
-                    cfg.Send<PagamentoCreatedEvent>(e => e.UseRoutingKeyFormatter(context => "pagamento-created"));
+                    cfg.Publish<PagamentoCreatedEvent>(e => e.ExchangeType = ExchangeType.Fanout);
                 });
             });
         }

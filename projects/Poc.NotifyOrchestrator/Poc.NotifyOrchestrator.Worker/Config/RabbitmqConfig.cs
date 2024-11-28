@@ -43,7 +43,7 @@ namespace Poc.NotifyOrchestrator.Worker.Config
 
         private static void ConfigureConsumers(IBusRegistrationContext context, IRabbitMqBusFactoryConfigurator config)
         {
-            config.ReceiveEndpoint("pagamento-created-event", re =>
+            config.ReceiveEndpoint("notificacao-created-queue", re =>
             {
                 re.ConfigureConsumeTopology = false;
 
@@ -54,8 +54,22 @@ namespace Poc.NotifyOrchestrator.Worker.Config
 
                 re.Bind("pagamento-created-event-exchange", e =>
                 {
-                    e.ExchangeType = ExchangeType.Direct;
-                    e.RoutingKey = "pagamento-created";
+                    e.ExchangeType = ExchangeType.Fanout;
+                });
+            });
+
+            config.ReceiveEndpoint("webhook-notification-queue", re =>
+            {
+                re.ConfigureConsumeTopology = false;
+
+                re.SetQuorumQueue();
+                re.SetQueueArgument("declare", "lazy");
+
+                re.ConfigureConsumer<WebhookNotificationConsumer>(context);
+
+                re.Bind("pagamento-created-event-exchange", e =>
+                {
+                    e.ExchangeType = ExchangeType.Fanout;
                 });
             });
         }
