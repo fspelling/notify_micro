@@ -24,6 +24,7 @@ namespace Poc.NotifyOrchestrator.Worker
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IUsuarioEmailRepository, UsuarioEmailRepository>();
             services.AddScoped<IUsuarioSmsRepository, UsuarioSmsRepository>();
+            services.AddScoped<IWebhookEndpointsRepository, WebhookEndpointsRepository>();
 
             services.AddScoped<IUsuarioNotificacaoCache, UsuarioNotificacaoCache>();
             services.AddScoped<IEventBus, EventBus>();
@@ -31,7 +32,7 @@ namespace Poc.NotifyOrchestrator.Worker
 
         public static void ConfigureValidators(this IServiceCollection services)
         {
-            services.AddScoped<IValidator<RealizarPagamentoRequest>, NotificarRequestValidator>();
+            services.AddScoped<IValidator<RealizarPosPagamentoRequest>, RealizarPosPagamentoRequestValidator>();
         }
 
         public static void ConfigureRabbitmq(this IServiceCollection services)

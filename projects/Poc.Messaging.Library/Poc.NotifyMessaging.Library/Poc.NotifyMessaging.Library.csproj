@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	<PackageId>Poc.NotifyMessaging.Library</PackageId>
-	<Version>1.0.5</Version>
+	<Version>1.0.6</Version>
 	<Authors>Fernando Spelling</Authors>
 	<Company>Pocs Spelling</Company>
 	<Description>Library que representa os contratos de mensageria de notificacao.</Description>

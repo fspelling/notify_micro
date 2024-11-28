@@ -11,7 +11,7 @@ namespace Poc.NotifyOrchestrator.Worker.Config
         {
             services.AddMassTransit(mt =>
             {
-                mt.AddConsumer<PagamentoCreatedEventConsumer>();
+                mt.AddConsumer<NotificacaoCreatedConsumer>();
 
                 mt.UsingRabbitMq((context, cfg) =>
                 {
@@ -26,7 +26,8 @@ namespace Poc.NotifyOrchestrator.Worker.Config
                 });
             });
 
-            services.AddTransient<PagamentoCreatedEventConsumer>();
+            services.AddTransient<NotificacaoCreatedConsumer>();
+            services.AddTransient<WebhookNotificationConsumer>();
         }
 
         private static void ConfigurePublishers(IRabbitMqBusFactoryConfigurator config)
@@ -49,7 +50,7 @@ namespace Poc.NotifyOrchestrator.Worker.Config
                 re.SetQuorumQueue();
                 re.SetQueueArgument("declare", "lazy");
 
-                re.ConfigureConsumer<PagamentoCreatedEventConsumer>(context);
+                re.ConfigureConsumer<NotificacaoCreatedConsumer>(context);
 
                 re.Bind("pagamento-created-event-exchange", e =>
                 {

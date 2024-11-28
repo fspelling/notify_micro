@@ -4,6 +4,6 @@ namespace Poc.NotifyOrchestrator.Service.Interfaces
 {
     public interface IPagamentoService
     {
-        Task RealizarPagamento(RealizarPagamentoRequest request);
+        Task RealizarPosPagamento(RealizarPosPagamentoRequest request);
     }
 }
