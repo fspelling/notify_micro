@@ -8,7 +8,7 @@ WORKDIR /src
 COPY ["projects/ClientServices/Poc.NotifyMicro.WebhookClient/Poc.NotifyMicro.WebhookClient.API/Poc.NotifyMicro.WebhookClient.API.csproj", "Poc.NotifyMicro.WebhookClient/Poc.NotifyMicro.WebhookClient.API/"]
 RUN dotnet restore "Poc.NotifyMicro.WebhookClient/Poc.NotifyMicro.WebhookClient.API/Poc.NotifyMicro.WebhookClient.API.csproj"
 COPY . .
-WORKDIR "/src/projects/ClientServices/Poc.NotifyMicro.WebhookClientPoc.NotifyMicro.WebhookClient.API"
+WORKDIR "/src/projects/ClientServices/Poc.NotifyMicro.WebhookClient/Poc.NotifyMicro.WebhookClient.API"
 RUN dotnet build "Poc.NotifyMicro.WebhookClient.API.csproj" -c Release -o /app/build
 
 FROM build AS publish
