@@ -8,6 +8,8 @@ using Poc.NotifyOrchestrator.Domain.ViewModel.Pagamento.Request;
 using Poc.NotifyOrchestrator.EntityFramework;
 using Poc.NotifyOrchestrator.EntityFramework.Interfaces;
 using Poc.NotifyOrchestrator.EntityFramework.Repositories;
+using Poc.NotifyOrchestrator.ExternalServices.Apis.Interfaces;
+using Poc.NotifyOrchestrator.ExternalServices.Factory;
 using Poc.NotifyOrchestrator.Service.Interfaces;
 using Poc.NotifyOrchestrator.Service.Services;
 using Poc.NotifyOrchestrator.Service.Validators.Notificacao;
@@ -28,6 +30,8 @@ namespace Poc.NotifyOrchestrator.Worker
 
             services.AddScoped<IUsuarioNotificacaoCache, UsuarioNotificacaoCache>();
             services.AddScoped<IEventBus, EventBus>();
+
+            services.AddScoped<WebhookClientFactory>();
         }
 
         public static void ConfigureValidators(this IServiceCollection services)

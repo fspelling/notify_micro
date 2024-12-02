@@ -3,7 +3,7 @@ services:
     image: ${DOCKER_REGISTRY-}notifypublishapi
     build:
       context: .
-      dockerfile: projects/Poc.NotifyPublish/Poc.NotifyPublish.API/Dockerfile
+      dockerfile: projects/Services/Poc.NotifyPublish/Poc.NotifyPublish.API/Dockerfile
     ports:
       - '5231:8080'
       - '5232:5235'
@@ -18,7 +18,7 @@ services:
     image: ${DOCKER_REGISTRY-}notifyorchestrator
     build:
       context: .
-      dockerfile: projects/Poc.NotifyOrchestrator/Poc.NotifyOrchestrator.Worker/Dockerfile
+      dockerfile: projects/Services/Poc.NotifyOrchestrator/Poc.NotifyOrchestrator.Worker/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=DB_NOTIFY;User Id=sa;Password=123@Passw0rd;Encrypt=False;
@@ -33,7 +33,7 @@ services:
     image: ${DOCKER_REGISTRY-}notifysendemail
     build:
       context: .
-      dockerfile: projects/Poc.NotifySend/Poc.NotifySendEmail.Worker/Dockerfile
+      dockerfile: projects/Services/Poc.NotifySend/Poc.NotifySendEmail.Worker/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     depends_on:
@@ -45,7 +45,7 @@ services:
     image: ${DOCKER_REGISTRY-}notifysendsms
     build:
       context: .
-      dockerfile: projects/Poc.NotifySend/Poc.NotifySendSms.Worker/Dockerfile
+      dockerfile: projects/Services/Poc.NotifySend/Poc.NotifySendSms.Worker/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     depends_on:
