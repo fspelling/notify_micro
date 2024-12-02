@@ -16,7 +16,7 @@ namespace Poc.NotifyOrchestrator.Worker.Config
 
                 mt.UsingRabbitMq((context, cfg) =>
                 {
-                    cfg.Host("172.25.16.1", "/", h =>
+                    cfg.Host("rabbitmq", "/", h =>
                     {
                         h.Username("guest");
                         h.Password("guest");
