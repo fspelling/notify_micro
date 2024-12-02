@@ -4,7 +4,7 @@ using Poc.NotifyOrchestrator.Domain.Entity;
 
 namespace Poc.NotifyOrchestrator.EntityFramework.EntityConfiguration
 {
-    internal class UsuarioConfiguration : IEntityTypeConfiguration<Usuario>
+    internal class UsuarioMapper : IEntityTypeConfiguration<Usuario>
     {
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {

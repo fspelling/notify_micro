@@ -4,9 +4,9 @@ using Poc.NotifyOrchestrator.Domain.Entity;
 
 namespace Poc.NotifyOrchestrator.EntityFramework.EntityConfiguration
 {
-    internal class UsuarioSmsConfiguration : IEntityTypeConfiguration<UsuarioSms>
+    internal class UsuarioEmailMapper : IEntityTypeConfiguration<UsuarioEmail>
     {
-        public void Configure(EntityTypeBuilder<UsuarioSms> builder)
+        public void Configure(EntityTypeBuilder<UsuarioEmail> builder)
         {
             builder.HasKey(p => p.ID);
             builder.Property(p => p.UsuarioId).IsRequired();

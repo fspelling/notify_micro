@@ -3,12 +3,12 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["projects/Poc.NotifySend/Poc.NotifySendSms.Worker/Poc.NotifySendSms.Worker.csproj", "Poc.NotifySend/Poc.NotifySendSms.Worker/"]
-COPY ["projects/Poc.NotifySend/Poc.NotifySend.Service/Poc.NotifySend.Service.csproj", "Poc.NotifySend/Poc.NotifySend.Service/"]
-COPY ["projects/Poc.NotifySend/Poc.NotifySend.Domain/Poc.NotifySend.Domain.csproj", "Poc.NotifySend/Poc.NotifySend.Domain/"]
+COPY ["projects/Services/Poc.NotifySend/Poc.NotifySendSms.Worker/Poc.NotifySendSms.Worker.csproj", "Poc.NotifySend/Poc.NotifySendSms.Worker/"]
+COPY ["projects/Services/Poc.NotifySend/Poc.NotifySend.Service/Poc.NotifySend.Service.csproj", "Poc.NotifySend/Poc.NotifySend.Service/"]
+COPY ["projects/Services/Poc.NotifySend/Poc.NotifySend.Domain/Poc.NotifySend.Domain.csproj", "Poc.NotifySend/Poc.NotifySend.Domain/"]
 RUN dotnet restore "Poc.NotifySend/Poc.NotifySendSms.Worker/Poc.NotifySendSms.Worker.csproj"
 COPY . .
-WORKDIR "/src/projects/Poc.NotifySend/Poc.NotifySendSms.Worker"
+WORKDIR "/src/projects/Services/Poc.NotifySend/Poc.NotifySendSms.Worker"
 RUN dotnet build "Poc.NotifySendSms.Worker.csproj" -c Release -o /app/build
 
 FROM build AS publish

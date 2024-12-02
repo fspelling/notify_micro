@@ -12,10 +12,11 @@ namespace Poc.NotifyOrchestrator.Worker.Config
             services.AddMassTransit(mt =>
             {
                 mt.AddConsumer<NotificacaoCreatedConsumer>();
+                mt.AddConsumer<WebhookNotificationConsumer>();
 
                 mt.UsingRabbitMq((context, cfg) =>
                 {
-                    cfg.Host("rabbitmq", "/", h =>
+                    cfg.Host("172.25.16.1", "/", h =>
                     {
                         h.Username("guest");
                         h.Password("guest");

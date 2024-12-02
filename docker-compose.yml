@@ -1,4 +1,17 @@
 services:
+  notifywebhookclient.api:
+    image: ${DOCKER_REGISTRY-}notifywebhookclient
+    build:
+      context: .
+      dockerfile: projects/ClientServices/Poc.NotifyMicro.WebhookClient/Poc.NotifyMicro.WebhookClient.API/Dockerfile
+    ports:
+      - '5233:8080'
+      - '5234:5235'
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - mynetwork
+
   notifypublish.api:
     image: ${DOCKER_REGISTRY-}notifypublishapi
     build:

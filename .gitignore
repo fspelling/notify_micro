@@ -130,3 +130,6 @@
 /projects/Services/Poc.NotifySend/Poc.NotifySendEmail.Worker/obj
 /projects/Services/Poc.NotifySend/Poc.NotifySendSms.Worker/bin/Debug/net8.0
 /projects/Services/Poc.NotifySend/Poc.NotifySendSms.Worker/obj
+/projects/Services/Poc.Messaging.Library/.vs
+/projects/Services/Poc.Messaging.Library/Poc.NotifyMessaging.Library/bin
+/projects/Services/Poc.Messaging.Library/Poc.NotifyMessaging.Library/obj

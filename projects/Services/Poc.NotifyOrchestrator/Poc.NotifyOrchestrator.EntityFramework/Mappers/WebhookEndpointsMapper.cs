@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Poc.NotifyPublish.Domain.Entity;
+using Poc.NotifyOrchestrator.Domain.Entity;
 
-namespace Poc.NotifyPublish.Data.Mapper
+namespace Poc.NotifyOrchestrator.EntityFramework.EntityConfiguration
 {
     public class WebhookEndpointsMapper : IEntityTypeConfiguration<WebhookEndpoints>
     {
