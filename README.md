@@ -92,3 +92,20 @@ Contém as APIs de clientes que simulam o consumo de notificações enviadas pel
 
 4. **Consumo pelo Cliente**:
    - A API `Poc.NotifyMicro.WebhookClient` simula um cliente que recebe as notificações via webhook e processa conforme necessário.
+
+---
+
+## Requisitos
+
+- Docker e Docker Compose instalados.
+- RabbitMQ e Redis configurados via Docker Compose.
+- *SDK do .NET 6 ou superior* instalado para desenvolvimento e testes locais.
+
+## Configuração
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/sua-poc.git
+   cd sua-poc
+   ```
+   
