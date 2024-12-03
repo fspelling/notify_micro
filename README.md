@@ -2,6 +2,8 @@
 
 Este projeto é uma **Prova de Conceito (PoC)** que demonstra uma arquitetura baseada em eventos, utilizando **RabbitMQ** como broker de mensagens e **webhooks** para notificar eventos aos clientes integrados.
 
+---
+
 ## ⚒️ Tecnologias Utilizadas
 
 - **.NET**: Plataforma de desenvolvimento principal.
@@ -12,11 +14,15 @@ Este projeto é uma **Prova de Conceito (PoC)** que demonstra uma arquitetura ba
 - **FluentValidation**: Validação de objetos e dados de entrada.
 - **Docker**: Containerização para ambiente de desenvolvimento local.
 
+---
+
 ## 📃 Objetivo
 
 - Implementar uma arquitetura baseada em eventos com foco em mensageria.
 - Permitir que clientes cadastrados sejam notificados via **webhooks** sobre eventos específicos.
 - Demonstrar boas práticas no uso de ferramentas de mensageria e integração.
+
+---
 
 ## 📲 Funcionalidades
 
@@ -34,6 +40,8 @@ Este projeto é uma **Prova de Conceito (PoC)** que demonstra uma arquitetura ba
 
 5. **Validação**:
    - Todas as entradas de dados passam por validações com o **FluentValidation**.
+
+---
 
 ## 📁 Estrutura do Projeto
 
@@ -84,10 +92,3 @@ Contém as APIs de clientes que simulam o consumo de notificações enviadas pel
 
 4. **Consumo pelo Cliente**:
    - A API `Poc.NotifyMicro.WebhookClient` simula um cliente que recebe as notificações via webhook e processa conforme necessário.
-
----
-
-Essa estrutura modular e desacoplada proporciona flexibilidade para evolução do sistema, permitindo:
-- A adição de novos micro serviços.
-- Suporte a mais tipos de notificações.
-- Integração de novos clientes via webhook.
