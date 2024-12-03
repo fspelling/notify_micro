@@ -17,7 +17,7 @@ Este projeto é uma **Prova de Conceito (PoC)** que demonstra uma arquitetura ba
 
 ---
 
-## 📃 Objetivo
+## 📋 Objetivo
 
 - Implementar uma arquitetura baseada em eventos com foco em mensageria.
 - Permitir que clientes cadastrados sejam notificados via **webhooks** sobre eventos específicos.
@@ -44,7 +44,7 @@ Este projeto é uma **Prova de Conceito (PoC)** que demonstra uma arquitetura ba
 
 ---
 
-## Fluxo geral do sistema
+## 🌐 Fluxo geral do sistema
 
 1. **Publicação do Evento**:
    - O evento `PagamentoCriado` é publicado pelo `Poc.NotifyPublish` na mensageria (**RabbitMQ**).
@@ -96,7 +96,7 @@ Contém as APIs de clientes que simulam o consumo de notificações enviadas pel
 
 ---
 
-## Requisitos
+## 🔍 Requisitos
 
 - Docker e Docker Compose instalados.
 - RabbitMQ e Redis configurados via Docker Compose.
@@ -104,7 +104,7 @@ Contém as APIs de clientes que simulam o consumo de notificações enviadas pel
 
 ---
 
-## Configuração
+## 🔧 Configuração
 
 1. Clone o repositório:
    ```bash
@@ -123,17 +123,17 @@ Contém as APIs de clientes que simulam o consumo de notificações enviadas pel
    ```
 ---
 
-## Proximos Passos
+## 📌 Proximos Passos
 
 - Adicioanr autenticação para os webhooks.
 - Implementar mecanismo de retry para notificações com falhas.
 
 ---
 
-## Contribuições
+## 📫 Contribuições
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
 ---
 
-## Licença
+## 📃 Licença
 Este projeto está licenciado sob a MIT License.
