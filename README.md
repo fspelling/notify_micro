@@ -60,8 +60,6 @@ Contém todos os micro serviços de negócio integrados à mensageria, responsá
   Micro serviço dedicado ao consumo de mensagens de notificação enviadas pelo `Poc.NotifyOrchestrator`.  
   Realiza o envio efetivo de notificações como **e-mail** e **SMS**.
 
----
-
 ### **projects/ClientServices**
 Contém as APIs de clientes que simulam o consumo de notificações enviadas pelos webhooks.
 
