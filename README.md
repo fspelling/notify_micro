@@ -4,6 +4,7 @@ Este projeto é uma **Prova de Conceito (PoC)** que demonstra uma arquitetura ba
 
 ## Tecnologias Utilizadas
 
+- **.NET**: Plataforma de desenvolvimento principal.
 - **RabbitMQ**: Broker de mensagens para gerenciar filas e troca de mensagens.
 - **MassTransit**: Framework para simplificar a comunicação com o RabbitMQ.
 - **Redis**: Cache distribuído para armazenamento rápido.
