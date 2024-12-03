@@ -47,7 +47,7 @@ Este projeto é uma **Prova de Conceito (PoC)** que demonstra uma arquitetura ba
 ## 🌐 Fluxo geral do sistema
 
 1. **Publicação do Evento**:
-   - O evento `PagamentoCriado` é publicado pelo `Poc.NotifyPublish` na mensageria (**RabbitMQ**).
+   - O evento `PagamentoCreatedEvent` é publicado pelo `Poc.NotifyPublish` na mensageria (**RabbitMQ**).
 
 2. **Orquestração**:
    - O `Poc.NotifyOrchestrator` consome o evento e realiza:
@@ -74,11 +74,11 @@ Contém todos os micro serviços de negócio integrados à mensageria, responsá
   Utilizada por todos os micro serviços para garantir a padronização da comunicação e dos contratos de mensagens.
 
 - **Poc.NotifyPublish**  
-  API principal que publica o evento `PagamentoCriado` na mensageria (**RabbitMQ**).  
+  API principal que publica o evento `PagamentoCreatedEvent` na mensageria (**RabbitMQ**).  
   Este serviço simula o início do fluxo de pagamento, gerando eventos consumidos pelos demais serviços.
 
 - **Poc.NotifyOrchestrator**  
-  Micro serviço responsável por consumir mensagens do evento `PagamentoCriado` e gerenciar o fluxo de mensagens do tipo **command** para os serviços de notificações.  
+  Micro serviço responsável por consumir mensagens do evento `PagamentoCreatedEvent` e gerenciar o fluxo de mensagens do tipo **command** para os serviços de notificações.  
   **Responsabilidades principais:**
   - Orquestrar o envio de notificações (e-mail, SMS, etc.).
   - Enviar requisições para os **webhooks** registrados.
@@ -121,6 +121,41 @@ Contém as APIs de clientes que simulam o consumo de notificações enviadas pel
    ```bash
    docker-compose up -d
    ```
+---
+
+## 💫 Exemplos de Uso
+
+1. Cadastrar um Cliente Webhook:
+   - Envie uma requisição POST para `/api/Webhook/Register` com o paylod:
+   ```bash
+   {
+     "endpoint": "meuEndpoint/notificacao",
+     "event": "PagamentoCreatedEvent"
+   }
+   ```
+
+2. Realizar o "pagamento":
+   - Envie uma requisição POST para `/api/Pagamento` com o paylod:
+   ```bash
+   {
+     "usuarioID": "123",
+     "formaPagamento": 1
+   }
+   ```
+
+3. Receber notificação do pagamento:
+   - Após um evento a ser publicado, os clientes cadastrados receberão notificações no formato:
+   ```bash
+   {
+     "EventName": "PagamentoCreatedEvent",
+     "data": {
+         "UsuarioId": "123",
+         "FormaPagamento": "PIX",
+         "DataCriacao": "2024-12-01",
+     }
+   }
+   ```
+
 ---
 
 ## 📌 Proximos Passos
