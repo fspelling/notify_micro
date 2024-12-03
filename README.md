@@ -43,6 +43,24 @@ Este projeto é uma **Prova de Conceito (PoC)** que demonstra uma arquitetura ba
 
 ---
 
+## Fluxo geral do sistema
+
+1. **Publicação do Evento**:
+   - O evento `PagamentoCriado` é publicado pelo `Poc.NotifyPublish` na mensageria (**RabbitMQ**).
+
+2. **Orquestração**:
+   - O `Poc.NotifyOrchestrator` consome o evento e realiza:
+     - A geração de comandos para o envio de notificações (e-mail, SMS).
+     - O envio de notificações via webhook para os clientes registrados.
+
+3. **Envio de Notificações**:
+   - O `Poc.NotifySend` consome os comandos de notificação e realiza o envio efetivo das mensagens.
+
+4. **Consumo pelo Cliente**:
+   - A API `Poc.NotifyMicro.WebhookClient` simula um cliente que recebe as notificações via webhook e processa conforme necessário.
+
+---
+
 ## 📁 Estrutura do Projeto
 
 A PoC é organizada de forma modular, separando os micro serviços de negócio principais dos serviços de cliente. Essa estrutura permite escalabilidade, manutenibilidade e reutilização de código.
@@ -77,29 +95,13 @@ Contém as APIs de clientes que simulam o consumo de notificações enviadas pel
 
 ---
 
-## Fluxo geral do sistema
-
-1. **Publicação do Evento**:
-   - O evento `PagamentoCriado` é publicado pelo `Poc.NotifyPublish` na mensageria (**RabbitMQ**).
-
-2. **Orquestração**:
-   - O `Poc.NotifyOrchestrator` consome o evento e realiza:
-     - A geração de comandos para o envio de notificações (e-mail, SMS).
-     - O envio de notificações via webhook para os clientes registrados.
-
-3. **Envio de Notificações**:
-   - O `Poc.NotifySend` consome os comandos de notificação e realiza o envio efetivo das mensagens.
-
-4. **Consumo pelo Cliente**:
-   - A API `Poc.NotifyMicro.WebhookClient` simula um cliente que recebe as notificações via webhook e processa conforme necessário.
-
----
-
 ## Requisitos
 
 - Docker e Docker Compose instalados.
 - RabbitMQ e Redis configurados via Docker Compose.
 - *SDK do .NET 6 ou superior* instalado para desenvolvimento e testes locais.
+
+---
 
 ## Configuração
 
@@ -108,4 +110,29 @@ Contém as APIs de clientes que simulam o consumo de notificações enviadas pel
    git clone https://github.com/seu-usuario/sua-poc.git
    cd sua-poc
    ```
-   
+1. Configure as varíaveis de ambiente do rabbitmq se necessário no arquivo docker-compose.yaml:
+   ```bash
+   environment:
+     RABBITMQ_DEFAULT_USER: guest
+     RABBITMQ_DEFAULT_PASS: guest
+   ```
+3. Suba os containers com Docker Compose:
+   ```bash
+   docker-compose up -d
+   ```
+---
+
+## Proximos Passos
+
+- Adicioanr autenticação para os webhooks.
+- Implementar mecanismo de retry para notificações com falhas.
+
+---
+
+## Contribuições
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+---
+
+## Licença
+Este projeto está licenciado sob a MIT License.
