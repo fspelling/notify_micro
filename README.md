@@ -77,7 +77,7 @@ Contém as APIs de clientes que simulam o consumo de notificações enviadas pel
 
 ---
 
-### **Fluxo Geral do Sistema**
+## Fluxo geral do sistema
 
 1. **Publicação do Evento**:
    - O evento `PagamentoCriado` é publicado pelo `Poc.NotifyPublish` na mensageria (**RabbitMQ**).
