@@ -12,6 +12,7 @@ Este projeto é uma **Prova de Conceito (PoC)** que demonstra uma arquitetura ba
 - **Redis**: Cache distribuído para armazenamento rápido.
 - **EF Core**: ORM para gerenciamento de banco de dados.
 - **FluentValidation**: Validação de objetos e dados de entrada.
+- **Refit**: gerencia e facilita o consumo de APIs Rest.
 - **Docker**: Containerização para ambiente de desenvolvimento local.
 
 ---
