@@ -1,4 +1,4 @@
-# Event-Driven PoC com RabbitMQ e Webhooks
+# Event-Driven com RabbitMQ e Webhooks
 
 Este projeto é uma **Prova de Conceito (PoC)** que demonstra uma arquitetura baseada em eventos, utilizando **RabbitMQ** como broker de mensagens e **webhooks** para notificar eventos aos clientes integrados.
 
